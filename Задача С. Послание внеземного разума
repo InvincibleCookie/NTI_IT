@@ -1,0 +1,23 @@
+n, p = map(int, input().split())
+y_n = []
+for i in range(n):
+    s = str(input())
+    s_sp = []
+    for n_c in range(len(s)):
+        s_sp.append(s[n_c])
+    if len(s) <= p:
+        y_n.append('YES')
+    else:
+        for j in range(len(s) - p):
+            if s_sp[j] == s_sp[j + p] or s_sp[j] == '?' or s_sp[j + p] == '?':
+                if s_sp[j] != '?' and s_sp[j + p] == '?':
+                    s_sp.pop(j + p)
+                    s_sp.insert(j + p, s_sp[j])
+                continue
+            else:
+                y_n.append('NO')
+                break
+        if len(y_n) == i:
+            y_n.append('YES')
+for e in y_n:
+    print(e)
