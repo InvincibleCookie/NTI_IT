@@ -1,0 +1,24 @@
+import math
+
+def calc_v(v):
+    tout = v / (b - d)
+    nen = math.ceil(t / tout)
+    return n == nen
+
+def bin():
+    l = 0
+    r = d * p
+    while (l + 1 < r):
+        mid = (l + r) // 2
+        if calc_v(mid):
+            r = mid
+        else: l = mid
+    print(r)
+
+
+d, b, t, p = map(int, input().split())
+v = d * p
+s = v
+rtout = v / (b - d)
+n = math.ceil(t / rtout)
+bin()
