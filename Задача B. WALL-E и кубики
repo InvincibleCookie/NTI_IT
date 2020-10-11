@@ -1,0 +1,24 @@
+def lohara():
+    global H
+    for i in range(1, len(H)):
+        for r in range(i):
+            t=r+1
+            while H[i-r]>H[i-t]:
+                a=(H[i-r]+H[i-t])/2
+                H[i-r]=math.floor(a)
+                H[i-t]=math.ceil(a)
+import math
+n = int(input())
+H = input().split()
+for i in range(len(H)):
+    H[i]=int(H[i])
+log=1
+while log:
+    AAA=1
+    for i in range(1, len(H)):
+        if H[i]>H[i-1]:
+            lohara()
+            AAA=0
+            break
+    if AAA: log=0
+for k in H: print(k, end=' ')
