@@ -7,11 +7,11 @@ def de(k, mi):
             a.append(i)
             # b = [k // i] + b
         i += 1
- 
+
     a.append(k)
     return a
- 
- 
+
+
 def mnog(n, minmnog, spisok, sp):
     if n == 1:
         sp.append(spisok)
@@ -22,8 +22,8 @@ def mnog(n, minmnog, spisok, sp):
                 mnog(n // i, i + 1, spisok + [i], sp)
                 if n == i:
                     return sp
- 
- 
+
+
 def prov(sp):
     n = 0
     a = []
@@ -31,7 +31,8 @@ def prov(sp):
         if d not in a:
             a.append(d)
     return a
- 
+
 n = int(input())
 sp = mnog(n, 2, [], [])
+
 print(len(sp))
