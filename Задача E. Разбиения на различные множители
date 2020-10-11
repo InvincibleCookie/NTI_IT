@@ -1,11 +1,13 @@
-def countdistinctfivisors(n, start=2):
+def mnog(n, minmnog, spisok, sp):
     if n == 1:
-        return 1
+        sp.append(spisok)
     else:
-        result = 0
-        for i in range(start, n+1):
+        for i in range(minmnog, n + 1):
             if n % i == 0:
-                result += countdistinctfivisors(n // i, i + 1)
-        return result
+                mnog(n // i, i + 1, spisok + [i], sp)
+                if n == i:
+                    return sp
+ 
+ 
 n = int(input())
-print(countdistinctfivisors(n))
+print(len(mnog(n, 2, [], [])))
